@@ -22,9 +22,6 @@ foreach($checkBoth as $both){
 $finalArray = $newarray2+$newarray;
 ksort($finalArray);
 foreach(range(1,100) as $number){
-    $printVal = $number;
-    if(isset($finalArray[$number])){
-        $printVal = $finalArray[$number];
-    }
+    $printVal = $finalArray[$number]??$number;
     print $printVal."\n";
 }
